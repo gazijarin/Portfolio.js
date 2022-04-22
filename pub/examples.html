@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>portfolio.js</title>
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
+  <link rel="stylesheet" type="text/css" href="examples.css">
+  <link rel="stylesheet" href="prism.css" />
+
+  <!-- First we load jquery from a Google CDN (content delivery network). -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Then we load a script that depends on jQuery -->
+  <script src="prism.js"></script>
+  <script defer type="text/javascript" src="items.js"></script>
+  <script defer type="text/javascript" src="experience.js"></script>
+  <script defer type="text/javascript" src='about.js'></script>
+  <script defer type="text/javascript" src='portfolio.js'></script>
+  <!-- Then we load a script that depends on our libraries (and jQuery) -->
+  <script defer type="text/javascript" src='examples.js'></script>
+
+
+</head>
+
+<body>
+  <div class="example">
+    <div class="example-title">portfolio.js</div>
+    <div class="example-desc">
+      Portfolio.js is a small JS library that helps with clear and
+      succinct data presentation that is easy to navigate. Built by Gazi Jarin.
+    </div>
+    <div class="example-nav-links">
+      <a href="#examples" class="example-link">
+        examples
+      </a>
+      <a href="#api" class="example-link">
+        api
+      </a>
+      <a href="#getstarted" class="example-link">
+        get started
+      </a>
+    </div>
+    <div id="examples" class="example-section">examples</div>
+    <div class="example-content">
+      <div class="ex-about">
+        <div class="section">about</div>
+        <div class="section-content">
+          <div class="section-desc">
+            The <code>About</code> display showcases general information about the user, organization or product. It has
+            a
+            simple title, description, icon and an optional stack that can outline various skillsets.
+          </div>
+          <div class="ex-about-display"></div>
+          <div class="ex-code">
+            <div class="ex-code-part-title">JS</div>
+            <pre><code class="language-javascript">
+            const portfolio = new Portfolio();
+
+            const about = portfolio.createAbout(".ex-about-display");
+            about.addAboutContent(
+              "Hi, I'm Gazi!",
+              ["JAVASCRIPT ES6+", "PYTHON", "JAVA", "C#", "HTML/CSS"],
+              "I am currently a fourth year Computer Science major at University of Toronto. After graduation, I will be joining Amazon as a Software Development Engineer while undertaking a part-time Master's of Science in Software Engineering at University of Oxford. \nBelow are some languages I am working with currently:",
+              "./example-assets/icon2.png"
+            );
+            </code></pre>
+          </div>
+        </div>
+
+      </div>
+      <div class="ex-item">
+        <div class="section">item display</div>
+        <div class="section-content">
+          <div class="section-desc">
+            <p>The <code>ItemDisplay</code> component showcases key information about an item. In this case, we utilized
+              the
+              component to showcase a few side projects.</p> It has a
+            title, description, image and an optional stack for links. The <code>ItemDisplay</code> component can be
+            customized as an <code>ItemSlider</code> or as an <code>ItemGrid</code>.
+          </div>
+          <div class="section sub">item slider</div>
+          <div class="ex-item-slider"></div>
+          <div class="ex-code">
+            <div class="ex-code-part-title">JS</div>
+            <pre><code class="language-javascript">
+            const newItemDisplay = portfolio.createItemDisplay(".ex-item-slider");
+            const slider = newItemDisplay.createItemSlider();
+            slider.addItem(
+              "Adam A.I.",
+              "A self-learning A.I. that learns to traverse through a complex maze using the genetic algorithm.",
+              "./example-assets/icon3.png",
+              { GITHUB: "www.github.com", "LIVE DEMO": "www.github.com" }
+            );
+            slider.addItem(
+              "Odin Bot",
+              "A Telegram Bot that helps you excel in your daily tasks using NLP.",
+              "./example-assets/icon1.png",
+              { GITHUB: "www.github.com" }
+            );
+            slider.addItem(
+              "Minimax Stonehenge",
+              "Two-player, zero-sum game with a strategic Minimax artificial intelligence.",
+              "./example-assets/icon2.png",
+              { GITHUB: "www.github.com", "LIVE DEMO": "www.github.com" }
+            );
+          </code></pre>
+          </div>
+          <div class="section sub">item grid</div>
+          <div class="ex-item-grid"></div>
+          <div class="ex-code">
+            <div class="ex-code-part-title">JS</div>
+            <pre><code class="language-javascript">
+            const newItemDisplay2 = portfolio.createItemDisplay(".ex-item-grid");
+            const grid = newItemDisplay2.createItemGrid();
+            grid.addItem(
+              "Adam A.I.",
+              "A self-learning A.I. that learns to traverse through a complex maze using the genetic algorithm.",
+              "./example-assets/icon3.png",
+              { GITHUB: "www.github.com", "LIVE DEMO": "www.github.com" }
+            );
+            grid.addItem(
+              "Odin Bot",
+              "A Telegram Bot that helps you excel in your daily tasks using NLP.",
+              "./example-assets/icon1.png",
+              { GITHUB: "www.github.com" }
+            );
+            grid.addItem(
+              "Minimax",
+              "Two-player, zero-sum game with a strategic Minimax artificial intelligence.",
+              "./example-assets/icon2.png",
+              { GITHUB: "www.github.com", "LIVE DEMO": "www.github.com" }
+            );
+            grid.addItem(
+              "Truth",
+              "A remake of the solar system using Three.js.",
+              "./example-assets/icon.png"
+            );
+          </code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="ex-exp">
+        <div class="section">experience display</div>
+        <div class="section-content">
+          <div class="section-desc">
+            <p>The <code>ExperienceDisplay</code> component showcases key information about the progression of one's
+              experiences.</p>
+            <p>In this case, we
+              utilized
+              the
+              component to showcase industry experience. It has a
+              title, description, image and an optional stack for skillsets learned. </p> The
+            <code>ExperienceDisplay</code>
+            component can be
+            customized as an <code>ExpStepper</code> which shows the experience in a timeline fashion or as an
+            <code>ExpTable</code> which shows the experience in tab format. The user has liberty to add as many steps
+            (or tabs) as visually viable.
+          </div>
+          <div class="section sub">experience stepper</div>
+          <div class="ex-exp-stepper"></div>
+          <div class="ex-code">
+            <div class="ex-code-part-title">JS</div>
+            <pre><code class="language-javascript">
+              const expDisplay = portfolio.createExpDisplay(".ex-exp-display");
+              const stepper = expDisplay.createExpStepper();
+              stepper.addExpItem(
+                "Amazon",
+                "SDE 1 @ Amazon",
+                "Collaborate with experienced cross-disciplinary Amazonians to conceive, design, and bring innovative products and services to market. Design and build innovative technologies in a large distributed computing environment and help lead fundamental changes in the industry.",
+                ["AWS", "KUBERNETES"]
+              );
+              stepper.addExpItem(
+                "Wattpad",
+                "Software Engineering Intern @ Wattpad",
+                "Developed a responsive React web page (the new Story Details) from scratch, both on client and server side, for an app with massive scale (2 billion daily requests). Collaborated with senior engineers and product management following best practices for the full software development life cycle, including coding standards, code reviews, source control management, build processes, testing, and operations.",
+                ["REACT", "BACKBONE", "SASS"]
+              );
+              stepper.addExpItem(
+                "Orange Gate",
+                "Software Engineering Intern @ Orange Gate",
+                "Developed a Node.js smart home system through Facebook’s Messenger integrated with Bocco sen- sors and other smart devices (Nest camera, TPLink smart plugs) to derive conclusions about the current state of the home. Identified continuous improvements in data quality, design reports and coding activities, presenting results and findings to internal business stakeholders.",
+                ["DialogFlow", "Vision", "AutoML", "Messenger Bot API", "MongoDB"]
+              );
+              stepper.addExpItem(
+                "Centivizer",
+                "Software Engineering Intern @ Centivizer",
+                "Developed a Node.js smart home system through Facebook’s Messenger integrated with Bocco sen- sors and other smart devices (Nest camera, TPLink smart plugs) to derive conclusions about the current state of the home. Identified continuous improvements in data quality, design reports and coding activities, presenting results and findings to internal business stakeholders.",
+                ["DialogFlow", "Vision", "AutoML", "Messenger Bot API", "MongoDB"]
+              );
+            </code></pre>
+          </div>
+          <div class="section sub">experience table</div>
+          <div class="ex-exp-tabs"></div>
+          <div class="ex-code">
+            <div class="ex-code-part-title">JS</div>
+            <pre><code class="language-javascript">
+              const expDisplay2 = portfolio.createExpDisplay(".ex-exp-tabs");
+              const expTable = expDisplay2.createExpTable();
+              expTable.addExpItem(
+                "WATTPAD",
+                "Software Engineering Intern @ Wattpad",
+                "Developed a responsive React web page (the new Story Details) from scratch, both on client and server side, for an app with massive scale (2 billion daily requests). Collaborated with senior engineers and product management following best practices for the full software development life cycle, including coding standards, code reviews, source control management, build processes, testing, and operations.",
+                ["REACT", "BACKBONE", "SASS"]
+              );
+              expTable.addExpItem(
+                "ORANGE GATE",
+                "Software Engineering Intern @ Orange Gate",
+                "Developed a Node.js smart home system through Facebook’s Messenger integrated with Bocco sen- sors and other smart devices (Nest camera, TPLink smart plugs) to derive conclusions about the current state of the home. Identified continuous improvements in data quality, design reports and coding activities, presenting results and findings to internal business stakeholders.",
+                ["DialogFlow", "Vision", "AutoML", "Messenger Bot API", "MongoDB"]
+              );
+              
+              expTable.addExpItem(
+                "AMAZON",
+                "SDE 1 @ Amazon",
+                "Collaborate with experienced cross-disciplinary Amazonians to conceive, design, and bring innovative products and services to market.",
+                ["AWS", "KUBERNETES"]
+              );
+            </code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="api" class="example-section">api</div>
+    <div class="example-content">
+      <div class="section">portfolio</div>
+      <table>
+        <tr>
+          <th>METHOD(S)</th>
+          <th>DESCRIPTION</th>
+        </tr>
+        <tr>
+          <td>
+            <code>createAbout(location)</code>
+
+          </td>
+          <td>Creates an <code>About</code> display at <code>location</code>.</td>
+        </tr>
+        <tr>
+          <td>
+            <code>createItemDisplay(location)</code>
+
+          </td>
+          <td>Creates an <code>ItemDisplay</code> at <code>location</code>.</td>
+        </tr>
+        <tr>
+          <td>
+            <code>createExpDisplay(location)</code>
+
+          </td>
+          <td>Creates an <code>ExpDisplay</code> at <code>location</code>.</td>
+        </tr>
+      </table>
+      <div class="section">about display</div>
+      <table>
+        <tr>
+          <th>METHOD(S)</th>
+          <th>DESCRIPTION</th>
+        </tr>
+        <tr>
+          <td>
+            <code>getAbout()</code>
+
+          </td>
+          <td>Returns this <code>About</code> instance.</td>
+        </tr>
+        <tr>
+          <td>
+            <code>addAboutContent(title, stack, description, iconUrl)</code>
+
+          </td>
+          <td>Populates the <code>About</code> instance with <code>title</code>, <code>stack</code>,
+            <code>description</code> and
+            <code>iconUrl</code>.</td>
+        </tr>
+      </table>
+      <div class="section">item display</div>
+      <table>
+        <tr>
+          <th>METHOD(S)</th>
+          <th>DESCRIPTION</th>
+        </tr>
+        <tr>
+          <td>
+            <code>getItemDisplay()</code>
+
+          </td>
+          <td>Returns this <code>ItemDisplay</code> instance.</td>
+        </tr>
+        <tr>
+          <td>
+            <code>createItemGrid()</code>
+
+          </td>
+          <td>Creates an <code>ItemGrid</code> instance.</td>
+        </tr>
+        <tr>
+          <td>
+            <code>createItemSlider()</code>
+
+          </td>
+          <td>Creates an <code>ItemSlider</code> instance.</td>
+        </tr>
+      </table>
+      <div class="section">item grid</div>
+      <table>
+        <tr>
+          <th>METHOD(S)</th>
+          <th>DESCRIPTION</th>
+        </tr>
+        <tr>
+          <td>
+            <code>getItemGrid()</code>
+
+          </td>
+          <td>Returns this <code>ItemGrid</code> instance.</td>
+        </tr>
+        <tr>
+          <td>
+            <code>addItem(title, description, iconUrl, stack)</code>
+
+          </td>
+          <td>Populates the <code>ItemGrid</code> instance with a new <code>Item</code> with <code>title</code>,
+            <code>stack</code>,
+            <code>description</code> and
+            <code>iconUrl</code>.</td>
+        </tr>
+      </table>
+      <div class="section">item slider</div>
+      <table>
+        <tr>
+          <th>METHOD(S)</th>
+          <th>DESCRIPTION</th>
+        </tr>
+        <tr>
+          <td>
+            <code>getItemSlider()</code>
+
+          </td>
+          <td>Returns this <code>ItemSlider</code> instance.</td>
+        </tr>
+        <tr>
+          <td>
+            <code>addItem(title, description, iconUrl, stack)</code>
+
+          </td>
+          <td>Populates the <code>ItemSlider</code> instance with a new <code>Item</code> with <code>title</code>,
+            <code>stack</code>,
+            <code>description</code> and
+            <code>iconUrl</code>.</td>
+        </tr>
+      </table>
+      <div class="section">experience display</div>
+      <table>
+        <tr>
+          <th>METHOD(S)</th>
+          <th>DESCRIPTION</th>
+        </tr>
+        <tr>
+          <td>
+            <code>getExpDisplay()</code>
+
+          </td>
+          <td>Returns this <code>ExpDisplay</code> instance.</td>
+        </tr>
+        <tr>
+          <td>
+            <code>createExpStepper()</code>
+
+          </td>
+          <td>Creates an <code>ExpStepper</code> instance.</td>
+        </tr>
+        <tr>
+          <td>
+            <code>createExpTable()</code>
+
+          </td>
+          <td>Creates an <code>ExpTable</code> instance.</td>
+        </tr>
+      </table>
+      <div class="section">exp stepper</div>
+      <table>
+        <tr>
+          <th>METHOD(S)</th>
+          <th>DESCRIPTION</th>
+        </tr>
+        <tr>
+          <td>
+            <code>getExpStepper()</code>
+
+          </td>
+          <td>Returns this <code>ExpStepper</code> instance.</td>
+        </tr>
+        <tr>
+          <td>
+            <code>addExpItem(stepText, stepTitle, stepDesc, stack)</code>
+
+          </td>
+          <td>Populates the <code>ExpStepper</code> instance with a new <code>ExpItem</code> with <code>stepText</code>,
+            <code>stepTitle</code>,
+            <code>stepDesc</code> and
+            <code>stack</code>.</td>
+        </tr>
+      </table>
+      <div class="section">exp table</div>
+      <table>
+        <tr>
+          <th>METHOD(S)</th>
+          <th>DESCRIPTION</th>
+        </tr>
+        <tr>
+          <td>
+            <code>getExpTable()</code>
+
+          </td>
+          <td>Returns this <code>ExpTable</code> instance.</td>
+        </tr>
+        <tr>
+          <td>
+            <code>addExpItem(stepText, stepTitle, stepDesc, stack)</code>
+
+          </td>
+          <td>Populates the <code>ExpTable</code> instance with a new <code>ExpItem</code> with <code>stepText</code>,
+            <code>stepTitle</code>,
+            <code>stepDesc</code> and
+            <code>stack</code>.</td>
+        </tr>
+      </table>
+    </div>
+    <div id="getstarted" class="example-section">get started</div>
+    <div class="section-content get-started">
+      <div class="section-desc">
+        To get started with <code>Portfolio.js</code>, you need to add a few scripts to your web-page.
+      </div>
+      <div class="section">jquery</div>
+      <script type="text/plain" class="language-markup">
+        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">&lt;/script>
+          </script>
+      <div class="section">js scripts</div>
+      <script type="text/plain" class="language-markup">
+        <script defer type="text/javascript" src="items.js">&lt;/script>
+        <script defer type="text/javascript" src="experience.js">&lt;/script>
+        <script defer type="text/javascript" src='about.js'>&lt;/script>
+        <script defer type="text/javascript" src='portfolio.js'>&lt;/script>
+          </script>
+      </script>
+      <div class="section">css</div>
+      <script type="text/plain" class="language-markup">
+        <link rel="stylesheet" type="text/css" href="portfolio.css">
+          </script>
+    </div>
+  </div>
+</body>
+
+</html>

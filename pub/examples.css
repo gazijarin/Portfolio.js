@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
+body {
+  background: rgb(238, 174, 202);
+  background: linear-gradient(
+    87deg,
+    rgba(238, 174, 202, 0.7749474789915967) 0%,
+    rgba(158, 240, 226, 1) 100%
+  );
+}
+
+table {
+  font-family: "NTR", sans-serif;
+  font-size: 20px;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 10px;
+}
+
+th {
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #ffffff22;
+}
+
+table code {
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(68, 68, 68);
+}
+
+.example {
+  padding: 60px;
+  font-family: "NTR", sans-serif;
+}
+.example-title {
+  font-size: 90px;
+  font-weight: bold;
+  line-height: 150px;
+  color: white;
+  text-align: center;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.example-section {
+  font-size: 70px;
+  color: white;
+  font-weight: bold;
+  line-height: 60px;
+  text-align: center;
+}
+
+.section {
+  font-size: 50px;
+  color: rgba(255, 255, 255, 0.738);
+  font-weight: bold;
+  line-height: 28px;
+  text-align: center;
+}
+
+.section.sub {
+  font-size: 40px;
+  padding-bottom: 30px;
+}
+
+.example-content {
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.example-desc {
+  font-size: 28px;
+  max-width: 700px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.71);
+  margin: 0 auto;
+}
+
+.ex-code {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  display: flex;
+  max-width: 1000px;
+  max-height: 450px;
+  flex-direction: column;
+}
+
+.ex-code-part-title {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.section-desc {
+  font-size: 28px;
+  line-height: 24px;
+  padding-bottom: 60px;
+  max-width: 900px;
+  color: rgba(0, 0, 0, 0.71);
+}
+
+.section-desc code {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.71);
+}
+
+.example-link {
+  font-size: 22px;
+  color: white;
+  font-weight: bolder;
+  font-family: "NTR", sans-serif;
+  padding: 2px 20px;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.example-link:hover {
+  background-color: rgb(205, 205, 205);
+}
+
+.example-nav-links {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 350px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+}
+
+.section-content.get-started pre {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  width: 1000px;
+}
+#examples.example-section,
+#api.example-section {
+  line-height: 150px;
+}
+
+/* Below code customizes Portfolio elements for example purposes only */
+.example .about-content {
+  color: rgba(0, 0, 0, 0.71);
+  max-width: 800px;
+}
+
+.example .item-slider {
+  color: rgba(0, 0, 0, 0.71);
+  max-width: 900px;
+}
+
+.example .item-slide img {
+  opacity: 0.3;
+}
+
+.example .item-slide img:hover {
+  opacity: 0.1;
+}
+
+.example .item-grid,
+.example .exp,
+.example .exp-stepper {
+  color: rgba(0, 0, 0, 0.71);
+}
+
+.example .ex-item-slider {
+  width: 900px;
+}
+.example .ex-item-grid {
+  max-width: 60%;
+}
