@@ -1,4 +1,4 @@
-# js-library-jaringaz
+# portfolio.js
 ## Landing Page
 https://afternoon-ocean-92382.herokuapp.com/
 ## Getting Started
