@@ -1,5 +1,5 @@
-# portfolio.js
-## Landing Page
+# Portfolio.js
+## Deployed Application
 https://afternoon-ocean-92382.herokuapp.com/
 ## Getting Started
 To get started with `Portfolio.js`, you need to add a few scripts to your web-page.
